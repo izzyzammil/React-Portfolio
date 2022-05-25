@@ -33,6 +33,7 @@
   gap: 2rem;
   margin-right: 4rem;
   list-style: none;
+  cursor: pointer;
 }
 
 .n-list > ul > li:hover {
