@@ -11,8 +11,10 @@ import Crown from "../../img/crown.png";
 import GlassesImoji from "../../img/glassesimoji.png";
 import FloatingDiv from "../FloatingDiv/FloatingDiv";
 import { themeContext } from "../../Context";
+import { motion } from "framer-motion";
 
 const Intro = () => {
+  const transition = { duration: 2, type: "spring" };
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
 
@@ -38,15 +40,29 @@ const Intro = () => {
         <img src={Vector1} alt="" />
         <img src={Vector2} alt="" />
         <img src={Boy} alt="" />
-        <img src={GlassesImoji} alt="" />
+        <motion.img
+          initial={{ left: "-36%" }}
+          whileInView={{ left: "-24%" }}
+          transition={transition}
+          src={GlassesImoji}
+          alt=""
+        />
 
-        <div style={{ top: "-4%", left: "68%" }}>
+        <motion.div
+          initial={{ left: "74%", top: "-4%" }}
+          whileInView={{ left: "68%" }}
+          transition={transition}
+        >
           <FloatingDiv image={Crown} txt1="Web" txt2="Developer" />
-        </div>
+        </motion.div>
 
-        <div style={{ top: "18.2rem", left: "2rem" }}>
+        <motion.div
+          initial={{ left: "9rem", top: "18.2rem" }}
+          whileInView={{ left: "4rem" }}
+          transition={transition}
+        >
           <FloatingDiv image={ThumbUp} txt1="Mobile" txt2="Developer" />
-        </div>
+        </motion.div>
 
         <div className="blur" style={{ background: "rgb(238 210 255)" }}></div>
         <div
